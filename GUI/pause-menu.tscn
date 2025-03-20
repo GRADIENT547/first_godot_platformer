@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6dy0sa301obo"]
+
+[ext_resource type="Script" path="res://GUI/pause-menu.gd" id="1_4b52m"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+scale = Vector2(0.3, 0.3)
+transform = Transform2D(0.3, 0, 0, 0.3, 0, 0)
+script = ExtResource("1_4b52m")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 3.338
+anchor_bottom = 3.304
+offset_left = 1387.0
+offset_top = 583.0
+offset_right = -1385.38
+offset_bottom = -420.992
+
+[node name="continue_button" type="Button" parent="."]
+offset_left = 1533.0
+offset_top = 747.0
+offset_right = 2313.0
+offset_bottom = 924.0
+theme_override_font_sizes/font_size = 90
+action_mode = 0
+text = "Продолжить"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 1516.0
+offset_top = 1025.0
+offset_right = 2330.0
+offset_bottom = 1213.0
+theme_override_font_sizes/font_size = 90
+text = "По новой"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 1516.0
+offset_top = 1310.0
+offset_right = 2330.0
+offset_bottom = 1487.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 90
+text = "Выйти в меню"
+
+[connection signal="pressed" from="continue_button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

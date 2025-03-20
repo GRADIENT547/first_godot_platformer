@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhw46i70ib4eo"]
+
+[ext_resource type="Script" path="res://GUI/main_menu.gd" id="1_pkuwg"]
+[ext_resource type="Texture2D" uid="uid://b8lgw53o15sy0" path="res://GUI/MainBackGround.png" id="2_i21qm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pkuwg")
+metadata/_edit_vertical_guides_ = [1292.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("2_i21qm")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 174.0
+offset_right = 750.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 50
+text = "Старт"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 260.0
+offset_right = 750.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 50
+text = "Настройки"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 346.0
+offset_right = 750.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 50
+text = "Выйти"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

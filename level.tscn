@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://c76f30qtuj7t6"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_3fv01"]
+[ext_resource type="Texture2D" uid="uid://2f7frp8x5rgm" path="res://Level/Gradient Background.png" id="1_wk27h"]
+[ext_resource type="PackedScene" uid="uid://dyo7qtsi7fq2b" path="res://player.tscn" id="2_cu5vg"]
+[ext_resource type="PackedScene" uid="uid://bjhmfh7upuuok" path="res://coin.tscn" id="3_j57nd"]
+[ext_resource type="Texture2D" uid="uid://bm47x66olr0m2" path="res://Level/Black Tileset.png" id="4_6tvuq"]
+[ext_resource type="PackedScene" uid="uid://dwu61iy3qx07q" path="res://Enemy/slime.tscn" id="5_0r67f"]
+[ext_resource type="PackedScene" uid="uid://c6dy0sa301obo" path="res://GUI/pause-menu.tscn" id="7_qpcuw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbpy1"]
+texture = ExtResource("4_6tvuq")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_nghc3"]
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_cbpy1")
+
+[sub_resource type="GDScript" id="GDScript_57pcd"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_3fv01")
+metadata/_edit_horizontal_guides_ = [128.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 128.0
+texture = ExtResource("1_wk27h")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nghc3")
+format = 2
+layer_0/tile_data = PackedInt32Array(393216, 65536, 0, 393217, 65536, 0, 393218, 65536, 0, 393219, 65536, 0, 393220, 65536, 0, 393221, 65536, 0, 393222, 65536, 1, 393223, 65536, 1, 393224, 65536, 1, 393225, 65536, 1, 458761, 65536, 1, 393226, 65536, 1, 393227, 65536, 0, 458762, 65536, 1, 458763, 65536, 1, 458760, 65536, 1, 458759, 65536, 1, 458758, 65536, 1, 458757, 65536, 1, 458756, 65536, 1, 458755, 65536, 1, 458754, 65536, 1, 458753, 65536, 1, 458752, 65536, 1, 458764, 65536, 1, 458765, 65536, 1, 458766, 65536, 1, 458767, 65536, 1, 393228, 65536, 0, 393229, 65536, 0, 393230, 65536, 0, 393231, 65536, 0, 393215, 131072, 1, 327679, 131072, 1, 262143, 131072, 1, 196607, 131072, 1, 131071, 131072, 1, 65535, 131072, 1, 327696, 0, 1, 262160, 0, 1, 196624, 0, 1, 131088, 0, 1, 65552, 0, 1, 16, 0, 1, -65536, 65536, 2, -65535, 65536, 2, -65534, 65536, 2, -65533, 65536, 2, -65532, 65536, 2, -65531, 65536, 2, -65530, 65536, 2, -65529, 65536, 2, -65528, 65536, 2, -65527, 65536, 2, -65526, 65536, 2, -65525, 65536, 2, -65524, 65536, 2, -65523, 65536, 2, -65522, 65536, 2, -65521, 65536, 2, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0, 327686, 0, 0, 327690, 131072, 0, 458751, 65536, 1, 524287, 65536, 1, -1, 65536, 1, -65520, 65536, 1, 393232, 65536, 1, 458768, 65536, 1, 262157, 393216, 0, 262156, 262144, 0, 196622, 262144, 0, 196623, 327680, 0, 131084, 393216, 0, 131083, 327680, 0, 131082, 327680, 0, 131081, 262144, 0)
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("2_cu5vg")]
+position = Vector2(134, 46)
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="Slime" parent="Mobs" instance=ExtResource("5_0r67f")]
+position = Vector2(67, 88)
+
+[node name="Slime2" parent="Mobs" instance=ExtResource("5_0r67f")]
+position = Vector2(224, 88)
+
+[node name="Coins" type="Node2D" parent="."]
+script = SubResource("GDScript_57pcd")
+
+[node name="Coin8" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(182, 25)
+
+[node name="Coin1" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(104, 73)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(118, 73)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(84, 89)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(169, 73)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(155, 73)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(239, 40)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(196, 25)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(168, 25)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("3_j57nd")]
+position = Vector2(154, 25)
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_qpcuw")]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7hm4n3xl8hx"]
+
+[ext_resource type="Script" path="res://GUI/settings_menu.gd" id="1_bm6oc"]
+[ext_resource type="Texture2D" uid="uid://b8lgw53o15sy0" path="res://GUI/MainBackGround.png" id="2_5vgrf"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bm6oc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_5vgrf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -204.0
+offset_right = 311.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingNames" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 313.0
+offset_bottom = 408.0
+alignment = 1
+
+[node name="MusicLabel" type="Label" parent="Panel/SettingNames"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.25
+text = "Громкость музыки"
+horizontal_alignment = 1
+
+[node name="SoundLabel" type="Label" parent="Panel/SettingNames"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.25
+text = "Громкость звуков"
+horizontal_alignment = 1
+
+[node name="SettingValues" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -284.0
+offset_top = -203.0
+offset_right = -24.0
+offset_bottom = 204.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Panel/SettingValues"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.25
+
+[node name="SoundSlider" type="HSlider" parent="Panel/SettingValues"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.25
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = 227.0
+offset_right = 126.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Назад"
+
+[connection signal="value_changed" from="Panel/SettingValues/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Panel/SettingValues/SoundSlider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

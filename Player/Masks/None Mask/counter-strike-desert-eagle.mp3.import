@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfpmn4wjw6qsx"
+path="res://.godot/imported/counter-strike-desert-eagle.mp3-7f162481374dcaa31aa4f6082f3f36bb.mp3str"
+
+[deps]
+
+source_file="res://Player/Masks/None Mask/counter-strike-desert-eagle.mp3"
+dest_files=["res://.godot/imported/counter-strike-desert-eagle.mp3-7f162481374dcaa31aa4f6082f3f36bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
